@@ -125,7 +125,9 @@ The default value indicates no integer extension is sent.
 
 ## Tuple Field 14: Test Variable Extensions
 
-This field specifies whether to include a test variable extension on every object in the track.  The ID of the extension is 2 * field value + 1.  The value of the extension is data.
+This field specifies whether to include a test variable extension on every object in the track.  The ID of the extension is 2 * field value + 1.  The value of the extension is random data.
+
+The default value indicates no variable extension is sent.
 
 ## Tuple Field 15: Publisher Delivery Timeout
 
