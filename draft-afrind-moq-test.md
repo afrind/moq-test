@@ -111,13 +111,13 @@ This tuple specifies whether to send end of group markers.
 * 0 := Do not send End of Group markers
 * 1 := Send End of Group markers
 
-End of group markers are an Object with status 0x3 End of Group.  
+End of group markers are an Object with status 0x3 End of Group.
 
 The default value is 0 / No End of Group markers.
 
 ## Tuple 13: Test Integer Extension
 
-This tuple specifies whether to include a test integer extension on every object in the track.  The ID of the extension is 2 * field value.  The value of the extension is random.  
+This tuple specifies whether to include a test integer extension on every object in the track.  The ID of the extension is 2 * field value.  The value of the extension is random.
 
 The default value indicates no integer extension is sent.
 
