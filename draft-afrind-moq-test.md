@@ -139,6 +139,8 @@ Upon receiving a vald SUBSCRIBE or FETCH for a moq-test track, the publisher MUS
 
 The payload of each published object is the charater t (for test) repeated for the length of the payload.
 
+When Datagram forwarding preference is used, certain combinations of options result in objects that cannot be transmitted below the maximum datagram size.  The publisher either responds with SUBSCRIBE_ERROR if detected when handling the SUBSCRIBE, or SUBSCRIBE_DONE with an error code if detected when publishing the object.
+
 # Conventions and Definitions
 
 {::boilerplate bcp14-tagged}
