@@ -1406,6 +1406,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <p id="section-3-1">If any namespace tuple field other than zero is not a positive integer, or is outside the supported range of the publisher, a SUBSCRIBE_ERROR or FETCH_ERROR is returned.<a href="#section-3-1" class="pilcrow">¶</a></p>
 <p id="section-3-2">Upon receiving a vald SUBSCRIBE or FETCH for a moq-test track, the publisher <span class="bcp14">MUST</span> publish objects according to the parameters of the namespace.<a href="#section-3-2" class="pilcrow">¶</a></p>
 <p id="section-3-3">The payload of each published object is the charater t (for test) repeated for the length of the payload.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<p id="section-3-4">When Datagram forwarding preference is used, certain combinations of options result in objects that cannot be transmitted below the maximum datagram size.  The publisher either responds with SUBSCRIBE_ERROR if detected when handling the SUBSCRIBE, or SUBSCRIBE_DONE with an error code if detected when publishing the object.<a href="#section-3-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
