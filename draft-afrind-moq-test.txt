@@ -70,22 +70,22 @@ Table of Contents
 
    1.  Introduction
    2.  Track Namespace Parameters
-     2.1.  Tuple 0: "moq-test-00"
-     2.2.  Tuple 1: Forwarding Preference
-     2.3.  Tuple 2: Start Group
-     2.4.  Tuple 3: Start Object
-     2.5.  Tuple 4: Last Group in Track
-     2.6.  Tuple 5: Last Object in Track
-     2.7.  Tuple 6: Objects per Group
-     2.8.  Tuple 7: Size of Object 0
-     2.9.  Tuple 8: Size of Objects > 0
-     2.10. Tuple 9: Object Frequency
-     2.11. Tuple 10: Group Increment
-     2.12. Tuple 11: Object Increment
-     2.13. Tuple 12: Send End of Group Markers
-     2.14. Tuple 13: Test Integer Extension
-     2.15. Tuple 14: Test Variable Extensions
-     2.16. Tuple 15: Publisher Delivery Timeout
+     2.1.  Tuple Field 0: "moq-test-00"
+     2.2.  Tuple Field 1: Forwarding Preference
+     2.3.  Tuple Field 2: Start Group
+     2.4.  Tuple Field 3: Start Object
+     2.5.  Tuple Field 4: Last Group in Track
+     2.6.  Tuple Field 5: Last Object in Track
+     2.7.  Tuple Field 6: Objects per Group
+     2.8.  Tuple Field 7: Size of Object 0
+     2.9.  Tuple Field 8: Size of Objects > 0
+     2.10. Tuple Field 9: Object Frequency
+     2.11. Tuple Field 10: Group Increment
+     2.12. Tuple Field 11: Object Increment
+     2.13. Tuple Field 12: Send End of Group Markers
+     2.14. Tuple Field 13: Test Integer Extension
+     2.15. Tuple Field 14: Test Variable Extensions
+     2.16. Tuple Field 15: Publisher Delivery Timeout
    3.  Publisher Behavior
    4.  Conventions and Definitions
    5.  Security Considerations
@@ -106,19 +106,20 @@ Table of Contents
 
    The moq-test protocol utilizes the Track Namespace to convey testing
    parameters from the publisher to the subscriber.  The Track Namespace
-   tuples are defined as follows.  Exactly 16 tuples must be provided,
-   but any blank tuple field other than tuple 0 indicates the default
-   value is used.  Future versions will use a different Tuple 0 and
-   potentially define a different set of parameters.
+   tuple fields are defined as follows.  Exactly 16 tuple fields must be
+   provided, but any blank tuple field other than field 0 indicates the
+   default value is used.  Future versions will use a different value
+   for tuple field 0 and potentially define a different set of
+   parameters.
 
-2.1.  Tuple 0: "moq-test-00"
+2.1.  Tuple Field 0: "moq-test-00"
 
-   This tuple indicates that the Track Namespace parameters are for the
+   This field indicates that the Track Namespace parameters are for the
    moq-test protocol.
 
-2.2.  Tuple 1: Forwarding Preference
+2.2.  Tuple Field 1: Forwarding Preference
 
-   This tuple specifies the forwarding preference for the track.  The
+   This field specifies the forwarding preference for the track.  The
    following values are defined:
 
    *  0 := One subgroup per group
@@ -133,62 +134,64 @@ Table of Contents
    numbered objects are sent on subgroup 0 and odd numbered objects are
    sent on group 1.
 
-2.3.  Tuple 2: Start Group
+2.3.  Tuple Field 2: Start Group
 
-   This tuple specifies the starting group number for the track.  The
+   This field specifies the starting group number for the track.  The
    default value is 0.
 
-2.4.  Tuple 3: Start Object
+2.4.  Tuple Field 3: Start Object
 
-   This tuple specifies the starting object number for the track.  The
+   This field specifies the starting object number for the track.  The
    default value is 0.
 
-2.5.  Tuple 4: Last Group in Track
+2.5.  Tuple Field 4: Last Group in Track
 
-   This tuple specifies the last group number in the track.  The default
+   This field specifies the last group number in the track.  The default
    value is 2^62 - 1 (eg: the track continues until unsubscribed).
 
    Use caution when setting this field accessing this track via FETCH.
 
-2.6.  Tuple 5: Last Object in Track
+2.6.  Tuple Field 5: Last Object in Track
 
-   This tuple specifies the last object number in the track.  The
-   default value is the number of objects in the group, plus one if end
+   This field specifies the last object number in the track.  The
+   maximum value is the number of objects in the group, plus one if end
    of group markers are used.
 
-2.7.  Tuple 6: Objects per Group
+   The default value is the maximum value.
 
-   This tuple specifies the number of objects per group.  The default is
+2.7.  Tuple Field 6: Objects per Group
+
+   This field specifies the number of objects per group.  The default is
    10.
 
-2.8.  Tuple 7: Size of Object 0
+2.8.  Tuple Field 7: Size of Object 0
 
-   This tuple specifies the size of the first object in bytes.  The
+   This field specifies the size of the first object in bytes.  The
    default is 1024 bytes.
 
-2.9.  Tuple 8: Size of Objects > 0
+2.9.  Tuple Field 8: Size of Objects > 0
 
-   This tuple specifies the size of objects with ID greater than 0, in
-   bytes.  The default value is 100 bytes.
+   This specifies the size of objects with ID greater than 0, in bytes.
+   The default value is 100 bytes.
 
-2.10.  Tuple 9: Object Frequency
+2.10.  Tuple Field 9: Object Frequency
 
-   This tuple specifies the frequency at which objects are sent in
+   This field specifies the frequency at which objects are sent in
    milliseconds.  The default value is 1000.
 
-2.11.  Tuple 10: Group Increment
+2.11.  Tuple Field 10: Group Increment
 
-   This tuple specifies the increment between group numbers.  The
+   This field specifies the increment between group numbers.  The
    default is 1.
 
-2.12.  Tuple 11: Object Increment
+2.12.  Tuple Field 11: Object Increment
 
-   This tuple specifies the increment between object numbers.  The
+   This tuple field specifies the increment between object numbers.  The
    default is 1.
 
-2.13.  Tuple 12: Send End of Group Markers
+2.13.  Tuple Field 12: Send End of Group Markers
 
-   This tuple specifies whether to send end of group markers.
+   This field specifies whether to send end of group markers.
 
    *  0 := Do not send End of Group markers
 
@@ -198,23 +201,23 @@ Table of Contents
 
    The default value is 0 / No End of Group markers.
 
-2.14.  Tuple 13: Test Integer Extension
+2.14.  Tuple Field 13: Test Integer Extension
 
-   This tuple specifies whether to include a test integer extension on
+   This field specifies whether to include a test integer extension on
    every object in the track.  The ID of the extension is 2 * field
    value.  The value of the extension is random.
 
    The default value indicates no integer extension is sent.
 
-2.15.  Tuple 14: Test Variable Extensions
+2.15.  Tuple Field 14: Test Variable Extensions
 
-   This tuple specifies whether to include a test variable extension on
+   This field specifies whether to include a test variable extension on
    every object in the track.  The ID of the extension is 2 * field
    value + 1.  The value of the extension is data.
 
-2.16.  Tuple 15: Publisher Delivery Timeout
+2.16.  Tuple Field 15: Publisher Delivery Timeout
 
-   This tuple specifies the publisher delivery timeout in milliseconds.
+   This field specifies the publisher delivery timeout in milliseconds.
    The default is no delivery timeout.
 
 3.  Publisher Behavior
