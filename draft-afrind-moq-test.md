@@ -1,23 +1,9 @@
 ---
-###
-# Internet-Draft Markdown Template
-#
-# Some fields will be set automatically during setup if they are unchanged.
-#
-# Don't include "-00" or "-latest" in the filename.
-# Labels in the form draft-<yourname>-<workgroup>-<name>-latest are used by
-# the tools to refer to the current version; see "docname" for example.
-#
-# This template uses kramdown-rfc: https://github.com/cabo/kramdown-rfc
-# You can replace the entire file if you prefer a different format.
-# Change the file extension to match the format (.xml for XML, etc...)
-#
-###
 title: "MoQT Test"
 abbrev: "moq-test"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
+docname: draft-afrind-moq-test-latest
 submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
 number:
 date:
@@ -39,9 +25,9 @@ venue:
 
 author:
  -
-    fullname: Your Name Here
+    fullname: "afrind"
     organization: Your Organization Here
-    email: your.email@example.com
+    email: "afrind@users.noreply.github.com"
 
 normative:
 
