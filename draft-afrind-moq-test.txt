@@ -213,7 +213,9 @@ Table of Contents
 
    This field specifies whether to include a test variable extension on
    every object in the track.  The ID of the extension is 2 * field
-   value + 1.  The value of the extension is data.
+   value + 1.  The value of the extension is random data.
+
+   The default value indicates no variable extension is sent.
 
 2.16.  Tuple Field 15: Publisher Delivery Timeout
 
