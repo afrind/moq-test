@@ -45,15 +45,15 @@ moq-test is designed to provide a comprehensive testing framework for MOQ implem
 
 # Track Namespace Parameters
 
-The moq-test protocol utilizes the Track Namespace to convey testing parameters from the publisher to the subscriber. The Track Namespace tuples are defined as follows.  Exactly 16 tuples must be provided, but any blank tuple field other than tuple 0 indicates the default value is used.  Future versions will use a different Tuple 0 and potentially define a different set of parameters.
+The moq-test protocol utilizes the Track Namespace to convey testing parameters from the publisher to the subscriber. The Track Namespace tuple fields are defined as follows.  Exactly 16 tuple fields must be provided, but any blank tuple field other than field 0 indicates the default value is used.  Future versions will use a different value for tuple field 0 and potentially define a different set of parameters.
 
-## Tuple 0: "moq-test-00"
+## Tuple Field 0: "moq-test-00"
 
-This tuple indicates that the Track Namespace parameters are for the moq-test protocol.
+This field indicates that the Track Namespace parameters are for the moq-test protocol.
 
-## Tuple 1: Forwarding Preference
+## Tuple Field 1: Forwarding Preference
 
-This tuple specifies the forwarding preference for the track. The following values are defined:
+This field specifies the forwarding preference for the track. The following values are defined:
 
 * 0 := One subgroup per group
 * 1 := One subgroup per object
@@ -62,51 +62,53 @@ This tuple specifies the forwarding preference for the track. The following valu
 
 The default value is 0.  When using two subgroups per group, even numbered objects are sent on subgroup 0 and odd numbered objects are sent on group 1.
 
-## Tuple 2: Start Group
+## Tuple Field 2: Start Group
 
-This tuple specifies the starting group number for the track.  The default value is 0.
+This field specifies the starting group number for the track.  The default value is 0.
 
-## Tuple 3: Start Object
+## Tuple Field 3: Start Object
 
-This tuple specifies the starting object number for the track.  The default value is 0.
+This field specifies the starting object number for the track.  The default value is 0.
 
-## Tuple 4: Last Group in Track
+## Tuple Field 4: Last Group in Track
 
-This tuple specifies the last group number in the track.  The default value is 2^62 - 1 (eg: the track continues until unsubscribed).
+This field specifies the last group number in the track.  The default value is 2^62 - 1 (eg: the track continues until unsubscribed).
 
 Use caution when setting this field accessing this track via FETCH.
 
-## Tuple 5: Last Object in Track
+## Tuple Field 5: Last Object in Track
 
-This tuple specifies the last object number in the track.  The default value is the number of objects in the group, plus one if end of group markers are used.
+This field specifies the last object number in the track.  The maximum value is the number of objects in the group, plus one if end of group markers are used.
 
-## Tuple 6: Objects per Group
+The default value is the maximum value.
 
-This tuple specifies the number of objects per group.  The default is 10.
+## Tuple Field 6: Objects per Group
 
-## Tuple 7: Size of Object 0
+This field specifies the number of objects per group.  The default is 10.
 
-This tuple specifies the size of the first object in bytes.  The default is 1024 bytes.
+## Tuple Field 7: Size of Object 0
 
-## Tuple 8: Size of Objects > 0
+This field specifies the size of the first object in bytes.  The default is 1024 bytes.
 
-This tuple specifies the size of objects with ID greater than 0, in bytes.  The default value is 100 bytes.
+## Tuple Field 8: Size of Objects > 0
 
-## Tuple 9: Object Frequency
+This specifies the size of objects with ID greater than 0, in bytes.  The default value is 100 bytes.
 
-This tuple specifies the frequency at which objects are sent in milliseconds.  The default value is 1000.
+## Tuple Field 9: Object Frequency
 
-## Tuple 10: Group Increment
+This field specifies the frequency at which objects are sent in milliseconds.  The default value is 1000.
 
-This tuple specifies the increment between group numbers.  The default is 1.
+## Tuple Field 10: Group Increment
 
-## Tuple 11: Object Increment
+This field specifies the increment between group numbers.  The default is 1.
 
-This tuple specifies the increment between object numbers.  The default is 1.
+## Tuple Field 11: Object Increment
 
-## Tuple 12: Send End of Group Markers
+This tuple field specifies the increment between object numbers.  The default is 1.
 
-This tuple specifies whether to send end of group markers.
+## Tuple Field 12: Send End of Group Markers
+
+This field specifies whether to send end of group markers.
 
 * 0 := Do not send End of Group markers
 * 1 := Send End of Group markers
@@ -115,19 +117,19 @@ End of group markers are an Object with status 0x3 End of Group.
 
 The default value is 0 / No End of Group markers.
 
-## Tuple 13: Test Integer Extension
+## Tuple Field 13: Test Integer Extension
 
-This tuple specifies whether to include a test integer extension on every object in the track.  The ID of the extension is 2 * field value.  The value of the extension is random.
+This field specifies whether to include a test integer extension on every object in the track.  The ID of the extension is 2 * field value.  The value of the extension is random.
 
 The default value indicates no integer extension is sent.
 
-## Tuple 14: Test Variable Extensions
+## Tuple Field 14: Test Variable Extensions
 
-This tuple specifies whether to include a test variable extension on every object in the track.  The ID of the extension is 2 * field value + 1.  The value of the extension is data.
+This field specifies whether to include a test variable extension on every object in the track.  The ID of the extension is 2 * field value + 1.  The value of the extension is data.
 
-## Tuple 15: Publisher Delivery Timeout
+## Tuple Field 15: Publisher Delivery Timeout
 
-This tuple specifies the publisher delivery timeout in milliseconds.   The default is no delivery timeout.
+This field specifies the publisher delivery timeout in milliseconds.   The default is no delivery timeout.
 
 # Publisher Behavior
 
