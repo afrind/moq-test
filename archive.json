@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-04-29T01:21:32.020599+00:00",
+  "timestamp": "2025-05-01T01:36:59.870396+00:00",
   "repo": "afrind/moq-test",
   "labels": [
     {
@@ -49,6 +49,23 @@
       "color": "ffffff"
     }
   ],
-  "issues": [],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOOCmVLM60wg5t",
+      "title": "Don't need \"last object in track\" parameter?",
+      "url": "https://github.com/afrind/moq-test/issues/1",
+      "state": "OPEN",
+      "author": "sharmafb",
+      "authorAssociation": "NONE",
+      "assignees": [],
+      "labels": [],
+      "body": "We have the parameters \"start object\", \"start group\", \"last group in track\", \"objects per group\", \"group increment\", and \"object increment\" from which we should be able to infer the last object in the track.",
+      "createdAt": "2025-04-30T21:50:24Z",
+      "updatedAt": "2025-04-30T21:50:24Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
   "pulls": []
 }
