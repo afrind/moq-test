@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-05-01T01:36:59.870396+00:00",
+  "timestamp": "2025-05-04T01:37:10.016757+00:00",
   "repo": "afrind/moq-test",
   "labels": [
     {
@@ -62,9 +62,24 @@
       "labels": [],
       "body": "We have the parameters \"start object\", \"start group\", \"last group in track\", \"objects per group\", \"group increment\", and \"object increment\" from which we should be able to infer the last object in the track.",
       "createdAt": "2025-04-30T21:50:24Z",
-      "updatedAt": "2025-04-30T21:50:24Z",
+      "updatedAt": "2025-05-01T22:55:32Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "afrind",
+          "authorAssociation": "OWNER",
+          "body": "I guess it could either be {start group + num groups * group increment, objects per group} or {start group + num groups * group increment + 1, 0}.",
+          "createdAt": "2025-05-01T05:52:26Z",
+          "updatedAt": "2025-05-01T05:52:26Z"
+        },
+        {
+          "author": "sharmafb",
+          "authorAssociation": "NONE",
+          "body": "Wouldn't it be neither? The definition in section 2.4 seems to imply that the object ids increase throughout the TRACK, rather than just within a GROUP (it says \"This field specifies the starting object number for the TRACK. The default value is 0.\").\n\nAssuming the object numbers start at some value and keep increasing throughout the track as per the object increment, wouldn't this be:\n\n(start object) + (num objects in total - 1) * (object increment)\n\nwhere (num objects in total) can be calculated from \"start group\", \"last group in track\", \"objects per group\", and \"group increment\"?",
+          "createdAt": "2025-05-01T22:55:31Z",
+          "updatedAt": "2025-05-01T22:55:31Z"
+        }
+      ]
     }
   ],
   "pulls": []
