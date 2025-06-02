@@ -4,8 +4,8 @@
 
 Media Over QUIC                                              A. Frindell
 Internet-Draft                                                      Meta
-Intended status: Informational                              3 March 2025
-Expires: 4 September 2025
+Intended status: Informational                               2 June 2025
+Expires: 4 December 2025
 
 
                                MoQT Test
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 September 2025.
+   This Internet-Draft will expire on 4 December 2025.
 
 Copyright Notice
 
@@ -141,8 +141,8 @@ Table of Contents
 
 2.4.  Tuple Field 3: Start Object
 
-   This field specifies the starting object number for the track.  The
-   default value is 0.
+   This field specifies the starting object number for each group in the
+   track.  The default value is 0.
 
 2.5.  Tuple Field 4: Last Group in Track
 
