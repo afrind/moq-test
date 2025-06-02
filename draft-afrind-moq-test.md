@@ -68,7 +68,8 @@ This field specifies the starting group number for the track.  The default value
 
 ## Tuple Field 3: Start Object
 
-This field specifies the starting object number for each group in the track.  The default value is 0.
+This field specifies the starting object number for each group in the track.
+The default value is 0.
 
 ## Tuple Field 4: Last Group in Track
 
