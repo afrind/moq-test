@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-01T01:47:47.531439+00:00",
+  "timestamp": "2025-06-03T01:25:46.492109+00:00",
   "repo": "afrind/moq-test",
   "labels": [
     {
@@ -82,5 +82,68 @@
       ]
     }
   ],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 2,
+      "id": "PR_kwDOOCmVLM6YsyI7",
+      "title": "Clarification on start object being reset for each group",
+      "url": "https://github.com/afrind/moq-test/pull/2",
+      "state": "MERGED",
+      "author": "sharmafb",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Previously, there was some ambiguity as to whether the object ids get reset at the beginning of each group. For example, if start_object == 0 and object_increment == 1 and objects_per_group == 3, there was ambiguity as to whether things would look like:\r\n\r\nGroup 0: 0, 1, 2\r\nGroup 1: 3, 4, 5\r\n...\r\n\r\nOR\r\n\r\nGroup 0: 0, 1, 2\r\nGroup 1: 0, 1, 2\r\n...",
+      "createdAt": "2025-06-02T20:39:54Z",
+      "updatedAt": "2025-06-02T20:44:56Z",
+      "baseRepository": "afrind/moq-test",
+      "baseRefName": "main",
+      "baseRefOid": "fb3d997e2ba3059bf11faec3fd61750d6add8b94",
+      "headRepository": "sharmafb/moq-test",
+      "headRefName": "patch-1",
+      "headRefOid": "cd44f1e55561373ad8d8f300ada39d6412cba0ae",
+      "closedAt": "2025-06-02T20:44:56Z",
+      "mergedAt": "2025-06-02T20:44:56Z",
+      "mergedBy": "afrind",
+      "mergeCommit": {
+        "oid": "74d5e16ccbb88a4f349b6c1ec7d8d0b6a5f4089a"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOCmVLM6sP_uD",
+          "commit": {
+            "abbreviatedOid": "e1d3062"
+          },
+          "author": "afrind",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2025-06-02T20:41:49Z",
+          "updatedAt": "2025-06-02T20:41:49Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOOCmVLM6sQA7g",
+          "commit": {
+            "abbreviatedOid": "e1d3062"
+          },
+          "author": "afrind",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-06-02T20:43:01Z",
+          "updatedAt": "2025-06-02T20:43:01Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\nThis field specifies the starting object number for each group in the track.\r\nThe default value is 0.\r\n```",
+              "createdAt": "2025-06-02T20:43:01Z",
+              "updatedAt": "2025-06-02T20:43:01Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
