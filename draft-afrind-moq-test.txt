@@ -4,8 +4,8 @@
 
 Media Over QUIC                                              A. Frindell
 Internet-Draft                                                      Meta
-Intended status: Informational                               2 June 2025
-Expires: 4 December 2025
+Intended status: Informational                               7 July 2025
+Expires: 8 January 2026
 
 
                                MoQT Test
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 December 2025.
+   This Internet-Draft will expire on 8 January 2026.
 
 Copyright Notice
 
@@ -228,9 +228,14 @@ Table of Contents
    integer, or is outside the supported range of the publisher, a
    SUBSCRIBE_ERROR or FETCH_ERROR is returned.
 
-   Upon receiving a vald SUBSCRIBE or FETCH for a moq-test track, the
+   Upon receiving a valid SUBSCRIBE or FETCH for a moq-test track, the
    publisher MUST publish objects according to the parameters of the
    namespace.
+
+   Upon receiving a SUBSCRIBE_ANNOUNCES with a Track Namespace, the
+   publisher MUST use PUBLISH to send objects according to the
+   parameters of the namespace.  If the publisher receives a
+   PUBLISH_ERROR, it will stop sending objects immediately.
 
    The payload of each published object is the charater t (for test)
    repeated for the length of the payload.
