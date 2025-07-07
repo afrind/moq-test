@@ -138,7 +138,12 @@ This field specifies the publisher delivery timeout in milliseconds.   The defau
 
 If any namespace tuple field other than zero is not a positive integer, or is outside the supported range of the publisher, a SUBSCRIBE_ERROR or FETCH_ERROR is returned.
 
-Upon receiving a vald SUBSCRIBE or FETCH for a moq-test track, the publisher MUST publish objects according to the parameters of the namespace.
+Upon receiving a valid SUBSCRIBE or FETCH for a moq-test track, the publisher
+MUST publish objects according to the parameters of the namespace.
+
+Upon receiving a SUBSCRIBE_ANNOUNCES with a Track Namespace, the publisher MUST
+use PUBLISH to send objects according to the parameters of the namespace. If the
+publisher receives a PUBLISH_ERROR, it will stop sending objects immediately.
 
 The payload of each published object is the charater t (for test) repeated for the length of the payload.
 
