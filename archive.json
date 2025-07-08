@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-06-03T01:25:46.492109+00:00",
+  "timestamp": "2025-07-08T01:27:22.993161+00:00",
   "repo": "afrind/moq-test",
   "labels": [
     {
@@ -140,6 +140,55 @@
               "body": "```suggestion\r\nThis field specifies the starting object number for each group in the track.\r\nThe default value is 0.\r\n```",
               "createdAt": "2025-06-02T20:43:01Z",
               "updatedAt": "2025-06-02T20:43:01Z"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "id": "PR_kwDOOCmVLM6d0MpS",
+      "title": "Update draft-afrind-moq-test.md with PUBLISH",
+      "url": "https://github.com/afrind/moq-test/pull/3",
+      "state": "MERGED",
+      "author": "SUJP123",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Added description of how PUBLISH will be added as part of publisher behavior.",
+      "createdAt": "2025-07-07T19:37:08Z",
+      "updatedAt": "2025-07-07T23:26:07Z",
+      "baseRepository": "afrind/moq-test",
+      "baseRefName": "main",
+      "baseRefOid": "74d5e16ccbb88a4f349b6c1ec7d8d0b6a5f4089a",
+      "headRepository": "SUJP123/moq-test",
+      "headRefName": "patch-1",
+      "headRefOid": "4dd816bcb423549fffdd4e91a5a668cadf3ea0aa",
+      "closedAt": "2025-07-07T23:26:06Z",
+      "mergedAt": "2025-07-07T23:26:06Z",
+      "mergedBy": "afrind",
+      "mergeCommit": {
+        "oid": "cd95b42c82198e48f441f4456ff9c69156a10781"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOOCmVLM6yjClH",
+          "commit": {
+            "abbreviatedOid": "6827f3f"
+          },
+          "author": "afrind",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2025-07-07T23:24:50Z",
+          "updatedAt": "2025-07-07T23:24:51Z",
+          "comments": [
+            {
+              "originalPosition": 7,
+              "body": "```suggestion\r\nUpon receiving a valid SUBSCRIBE or FETCH for a moq-test track, the publisher\r\nMUST publish objects according to the parameters of the namespace.\r\n\r\nUpon receiving a SUBSCRIBE_ANNOUNCES with a Track Namespace, the publisher MUST\r\nuse PUBLISH to send objects according to the parameters of the namespace. If the\r\npublisher receives a PUBLISH_ERROR, it will stop sending objects immediately.\r\n```",
+              "createdAt": "2025-07-07T23:24:51Z",
+              "updatedAt": "2025-07-07T23:24:51Z"
             }
           ]
         }
