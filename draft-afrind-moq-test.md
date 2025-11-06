@@ -60,7 +60,8 @@ This field specifies the forwarding preference for the track. The following valu
 * 2 := Two subgroups per group (0 and 1)
 * 3 := Datagram
 
-The default value is 0.  When using two subgroups per group, even numbered objects are sent on subgroup 0 and odd numbered objects are sent on group 1.
+The default value is 0.  When using two subgroups per group, even numbered objects are sent on subgroup 0 and odd numbered objects are sent on subgroup 1.
+When Object Increment is even, objects will only be sent on one of the two streams.  The publisher MAY open the unused subgroup stream for each group.
 
 ## Tuple Field 2: Start Group
 
