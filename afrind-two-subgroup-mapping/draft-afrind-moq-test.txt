@@ -4,8 +4,8 @@
 
 Media Over QUIC                                              A. Frindell
 Internet-Draft                                                      Meta
-Intended status: Informational                               7 July 2025
-Expires: 8 January 2026
+Intended status: Informational                           6 November 2025
+Expires: 10 May 2026
 
 
                                MoQT Test
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 8 January 2026.
+   This Internet-Draft will expire on 10 May 2026.
 
 Copyright Notice
 
@@ -132,7 +132,9 @@ Table of Contents
 
    The default value is 0.  When using two subgroups per group, even
    numbered objects are sent on subgroup 0 and odd numbered objects are
-   sent on group 1.
+   sent on subgroup 1.  When Object Increment is even, objects will only
+   be sent on one of the two streams.  The publisher MAY open the unused
+   subgroup stream for each group.
 
 2.3.  Tuple Field 2: Start Group
 
