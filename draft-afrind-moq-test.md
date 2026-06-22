@@ -141,9 +141,17 @@ If any namespace tuple field other than zero is not a positive integer, or is ou
 Upon receiving a valid SUBSCRIBE or FETCH for a moq-test track, the publisher
 MUST publish objects according to the parameters of the namespace.
 
-Upon receiving a SUBSCRIBE_ANNOUNCES with a Track Namespace, the publisher MUST
-use PUBLISH to send objects according to the parameters of the namespace. If the
-publisher receives a PUBLISH_ERROR, it will stop sending objects immediately.
+Upon receiving SUBSCRIBE_NAMESPACE with a complete moq-test Track Namespace as
+the Track Namespace Prefix, the publisher MUST respond with REQUEST_OK and send
+exactly one NAMESPACE message.  The NAMESPACE message contains an empty Track
+Namespace Suffix, indicating the subscribed prefix is itself the matching
+namespace.  The publisher MUST NOT send PUBLISH messages.
+
+Upon receiving SUBSCRIBE_TRACKS with a complete moq-test Track Namespace as the
+Track Namespace Prefix, the publisher MUST respond with REQUEST_OK and send
+exactly one PUBLISH for that Track Namespace.  Objects are sent according to the
+parameters of the namespace.  If that PUBLISH receives PUBLISH_ERROR, the
+publisher stops sending objects for it immediately.
 
 The payload of each published object is the charater t (for test) repeated for the length of the payload.
 
